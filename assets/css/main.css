@@ -3950,3 +3950,10 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+
+.pdf {
+	margin: auto;
+	max-width: 500;
+	max-height: 2000;
+}
