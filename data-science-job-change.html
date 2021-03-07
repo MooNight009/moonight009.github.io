@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Job Change of Data Scientists - MJ's Protfolio UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>MJ</strong> <span>Portfolio</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li><a href="contact-me.html">Contact Me</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/movies.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Job Change of Data Scientists</h1>
+							</header>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<!-- <header class="major">
+										<h2>Sed amet aliquam</h2>
+									</header> -->
+									<p>For this project I decided to acquire data from kaggle dataset <a href="https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists">HR Analytics: Job Change of Data Scientists</a>. This project goes through basic analysis of the data, pre-processing and applying a Random Forest model to try to predict whether a person is likely to stay in a company or leave it.</p>
+									<p>The entire code as well as more detailed result can be found in <a href="https://github.com/MooNight009/ColabProjects/blob/master/HR_Analytics_Job_Change_of_Data_Scientists.ipynb">github</a>.</p>
+									<p>I used Google Colab to host the code and data and run the code for simplicity and ease of use.</p>
+									<h5>Analysis result</h5>
+									<ul>
+										<li>The data contains a lot of null values which needs to be addressed.</li>
+										<li>The data is in label form and will have to be converted to numerical values to input into models for better accuracy.</li>
+										<li>The data is imbalanced especiialy in variables like target and gender. While there are also imbalances in variables like relevent experience, university enrollment, education level, major discipline and company type these imbalances are to be expected as they are usually the requirements for data science positions.</li>
+										<li>The correlation table provides valuable insight between the valuable like how higher city development index directly correlates to higher experience.</li>
+									</ul>
+									<h5>Pre-processing</h5>
+									<ul>
+										<li>Train and test data were combined for consistency throughout the process.</li>
+										<li>First all the values have to be encoded to numerical values. LabeleEncoder was used on nominal values and direct mapping was applied on oridnal values to maintain the order.</li>
+										<li>To handle the missing information there many option like remove rows/columns with missing data, applying average, training a regressor to predict the values. KNN Imputer was used on the data to avoid losing any data and the simplicty of the approach. The values were also rounded because they are categorical.</li>
+										<li>Train and test were seperated in preparation for model training.</li>
+									</ul>
+									<h5>Model Training</h5>
+									<ul>
+										<li>Random Forest was chosen as the predictor model.</li>
+										<li>After training the model achieved 99% on training, 77% on validation and 75% on testing.</li>
+										<li>The model was clearly overfitting so over sampling with SMOTE was used to balance the data more. The validation accuracy increased to 84% and testing reduced to 76%.</li>
+										<li>Another layer of oversampling was applied to increase the dataset size more which is resulted in increase in validation accuracy but again reduction in testing.</li>
+									</ul>
+									<h5>Potential improvements</h5>
+									<ul>
+										<li>Testing with different ways to fill the missing values.</li>
+										<li>Hyoeroarameter tuning the Random Forest model.</li>
+										<li>Applying a different model like boosted tree model.</li>
+								</div>
+							</section>
+
+					</div>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/MooNight009" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/alimajedi/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a class="icon solid alt fa-phone"></a><span class="label">&nbsp; +60 192877844</span></li>
+								<li><a class="icon solid alt fa-envelope"></a><span class="label">&nbsp; aamajedi@gmail.com</span></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
