@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Change in Top Performing Steam Genres and Top Publishers Analysis - MJ's Protfolio UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><strong>MJ</strong> <span>Portfolio</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="education-and-certification.html">Education and Certification</a></li>
+							<li><a href="experience.html">Experience</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li><a href="contact-me.html">Contact Me</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/movies.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Change in Top Performing Steam Genres and Top Publishers Analysis</h1>
+							</header>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<!-- <header class="major">
+										<h2>Sed amet aliquam</h2>
+									</header> -->
+									<p class="tab">The final challenge for Google Data Analytics Professional's course was to finish a project to showcase what I've learned called capstone project. I was presented with three options: Analysis of a bike-sharing company, a wellness technology company or choosing my own project. I decided to go with the later option.</p>
+									<p class="tab">Initially I was considering doing an analysis on a marketing topic but after coming across some good datasets about steam's player count throughout the years I couldn't resist picking it as my topic. After having picked I topic I decided to start with the method I learned in Google's course, the six data analysis phases.</p>
+									
+									<br>
+									<h5>Ask</h5>
+									<p class="tab">The first phase is to determine the goal of the project and define it's scope. This is where I get to talk to the stakeholders to understand their requirements. I defined my stakeholders as a game publisher interested in learning more about changes in trending genres throughout the years and product effectiveness of publishers. To limit my scope and have a tangible goal and defined three questions that I had to answer by the end of this analysis.</p>
+									<ul>
+										<li>How has the most popular genres changed over the past years?</li>
+										<li>What were the most popular genres by monthly player count in 2021?</li>
+										<li>Which developers produce the best games in genres answered by the previous question using Metacritic scores as a metric?</li>
+									</ul>
+									
+									<br>
+									<h5>Prepare</h5>
+									<p class="tab">This is where I locate where data relevant to this analysis is located and it's integrity. I have to make it's credible and free of security and privacy concerns.</p>
+									<p class="tab">I found two great 3rd party datasets in Kaggle for <a href="https://www.kaggle.com/datasets/xcherry/games-of-all-time-from-metacritic">Steam historic stats from Steam Charts</a> and <a href="https://www.kaggle.com/datasets/connorwynkoop/steam-monthly-player-data">Metacritic scores</a>.</p>
+									<p class="tab">Steam is a vide game distribution service that most game offered and played on. It provides stats on daily and monthly average users for each game but doesn't offer historic data. Steam Charts is a website that's been operating since 2012 that accesses Steam's stats using their API and have stored all the data since 2012.</p>
+									<p class="tab">Metacritic is a website that aggregates reviews of video games and has two sets of score each game, meta score based on critic reviews and user score based reviews of the general public.</p>
+									<p class="tabl">One issue that might skew the result is that some lesser known games might have different names in the two datasets causing them to be left out. Also Steam appears to provide different stats for different DLCs of a game so the total number of average players might be less in some scenarios.</p>
+									<p class="">After confirming that the data is upto date, reliable and comprehensive I decided to proceed to the next phase</p>
+
+									<br>
+									<h5>Process</h5>
+									<p class="tab">This is where I familiarize myself with the data and employ data processing techniques such as data type conversion, feature creation, and missing value imputation. But first I familiarized myself with the two datasets.</p>
+									<p>Metacritic columns:</p>
+									<ul>
+										<li>Game name: Name of the video game this row is referring to.</li>
+										<li>Meta score: Score based on critics reviews.</li>
+										<li>User score: Score based on user reviews.</li>
+										<li>Platform: Platforms the game is available on.</li>
+										<li>Description: Description of the game.</li>
+										<li>Url: Link to the original Metacritic website.</li>
+										<li>Developer: Name of the developer of the video game.</li>
+										<li>Genre: A list of genres used to define the game.</li>
+										<li>Type: Whether the game is singleplayer of multiplayer.</li>
+										<li>Rating: Audience rating of the game e.g. E, M, T</li>
+									</ul>
+									<br>
+									<p>SteamCharts columns:</p>
+									<ul>
+										<li>Name: Name of the video game this row is referring to.</li>
+										<li>Month: Month and year of the recorded row stats.</li>
+										<li>Avg. players: Average players for the registered month.</li>
+										<li>Gain: Change in average player count since last month.</li>
+										<li>%Gain: Percentage change in average player count since last month.</li>
+										<li>Peak players: Highest number of players in any given time since the release of the game.</li>
+									</ul>
+
+									<br>
+									<p class="tab">Then I proceeded with data processing. The following is a list of techniques I applied to the datasets</p>
+									<ul>
+										<li>Updated columns names to follow naming conventions</li>
+										<li>Removed rows in Steam data with "Last 30 days" in date</li>
+										<li>Converted columns data, average_players, perc_player_change, and player_change to appropriate data type</li>
+										<li>Added average score column to Metacritic as part an average of the two scores</li>
+										<li>Converted genre from string to list then split it into multiple rows for each genre</li>
+										<li>Dropped remaining rows with na values</li>
+										<li>Dropped extra columns that are unnecessary for this analysis such as platform, description, url, type, rating, and etc.</li>
+									</ul>
+									<p class="tab">This phase took the longest time as I tried to make sure the data was fully clean and ready for the next phase.</p>
+									
+
+									<br>
+									<h5>Analyze and Share</h5>
+									<p class="tab">I started my analysis using R by merging the two datasets on game name. This resulted in a table with 486k rows, 2168 games, 139 genres and 1329 developers. When I prepared the data I accepted the limitations of the two datasets and the fact that many games will be deleted from the list.</p>
+									<p class="tab">After finished the analysis I decided to showcase the result using <a href="https://public.tableau.com/app/profile/ali.majedi/viz/TopSteamGenresandDevelopers/TopSteamGenresandDevelopers">Tableau</a>.</p>
+								</div>
+							</section>
+
+					</div>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/MooNight009" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/alimajedi/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a class="icon solid alt fa-phone"></a><span class="label">&nbsp; +60 192877844</span></li>
+								<li><a class="icon solid alt fa-envelope"></a><span class="label">&nbsp; aamajedi@gmail.com</span></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
